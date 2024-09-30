@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Papel</th>
+                <th>Data Cadastro</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (users.length> 0) { %>
+                <% users.forEach(user => { %> 
+                    <tr>
+                        <td><%= user.id %></td>
+                        <td><%= user.nome %></td>
+                        <td><%= user.email %></td>
+                        <td><%= user.papel %></td>
+                        <td><%= user.dt_cadastro %></td>
+                        <td>
+                            <a href="#" class="btn btn-primary">Editar</a>
+                            <a href="#" class="btn btn-danger">Excluir</a>
+                        </td>
+                    </tr>
+                <% }); %> 
+            <%} else {%>
+                <tr>
+                    <td colspan="4">Nenhuma categoria cadastrada</td>
+                </tr>
+            <% } %>
+        </tbody>    
+    </table>
+
+</body>
+</html>
